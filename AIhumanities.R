@@ -81,8 +81,21 @@ ggplot(cleaned_long_hgs, aes(x = Group, y = Score)) +
        y = "Score") + 
   theme_light()
 
+
+## ANOVA
+
+anova_pcs <- aov(Score ~ Group, data = cleaned_long_pcs)
+anova_wcs <- aov(Score ~ Group, data = cleaned_long_wcs)
+anova_hgs <- aov(Score ~ Group, data = cleaned_long_hgs)
+
+
 ## summary
+
 summary(cleaned_pcs)
 summary(cleaned_wcs)
 summary(cleaned_hgs)
+
+summary(anova_pcs)
+summary(anova_wcs)
+summary(anova_hgs)
 sd(cleaned_long_hgs$Score)
